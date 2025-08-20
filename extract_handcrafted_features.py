@@ -2,11 +2,6 @@
 """
 Extract handcrafted features from nuclei in H&E images.
 
-This script takes an H&E image and nuclei centroids CSV, then extracts
-~32 handcrafted features (shape, texture, color, intensity) for each nucleus.
-
-Usage:
-  python extract_handcrafted_features.py --image Easy1.png --centroids outputs/nuclei_centroids.csv --outdir outputs
 """
 
 import argparse

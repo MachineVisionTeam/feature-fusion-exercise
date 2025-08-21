@@ -102,7 +102,7 @@ python test_features.py
 
 ---
 
-#Feature Integration for Nuclei 
+# Feature Integration for Nuclei 
 This script integrates deep features and hand-crafted features for nuclei in H&E histology images to produce multiple integrated feature sets.
 
 ## What This Does

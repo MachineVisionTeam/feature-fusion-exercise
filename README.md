@@ -101,3 +101,50 @@ python test_features.py
 * `outputs/handcrafted_features.csv`: Generated features
 
 ---
+
+#Feature Integration for Nuclei 
+This script integrates deep features and hand-crafted features for nuclei in H&E histology images to produce multiple integrated feature sets.
+
+## What This Does
+The script takes CSV file containing nuclei centroids and hand-crafted features, then generates integrated feature sets for each nucleus:
+
+* **Fully Integrated Features**: Concatenates all deep (512) and hand-crafted (43) features into a single vector.
+* **PCA Integrated Features**: Reduces the combined feature set to 32 components using Principal Component Analysis (PCA).
+* **Variance-Selected Integrated Features**: Selects the top 32 features based on variance.
+* **Gated Integrated Features**: Applies variance-based weights to all features using a sigmoid normalization.
+##  Requirements
+
+```bash
+pip install numpy pandas scikit-learn
+```
+##  Usage
+
+### Basic Usage
+
+```bash
+python integrate_features.py --deep_features nuclei_features.csv --hand_crafted handcrafted_features.csv --outdir outputs
+```
+### With Parameters
+
+```bash
+python integrate_features.py \
+    --deep_features nuclei_features.csv \
+    --hand_crafted handcrafted_features.csv \
+    --outdir outputs
+```
+
+### Parameters
+
+* `--deep_features`: Path to CSV file with deep features (columns: nucleus_id, x, y, area_px, equivalent_diameter_px, solidity, eccentricity, feat_0 to feat_511).
+* `--hand_crafted`: Path to CSV file with hand-crafted features (columns: nucleus_id, x, y, and 43 hand-crafted features).
+* `--outdir`: Output directory (default: "outputs")
+
+
+##  Output
+
+The script generates four CSV files in the specified output directory:
+
+* `fully_integrated_features.csv`: Contains nucleus_id, x, y, area_px, equivalent_diameter_px, solidity, eccentricity, and 555 integrated features.
+* `pca_integrated_features.csv`: Contains nucleus_id, x, y, area_px, equivalent_diameter_px, solidity, eccentricity, and 32 PCA-reduced features.
+* `variance_integrated_features.csv`: Contains nucleus_id, x, y, area_px, equivalent_diameter_px, solidity, eccentricity, and 32 variance-selected features.
+* `gated_integrated_features.csv`: Contains nucleus_id, x, y, area_px, equivalent_diameter_px, solidity, eccentricity, and 555 gated features with variance-based weights.

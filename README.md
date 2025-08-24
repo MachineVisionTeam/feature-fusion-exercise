@@ -40,7 +40,7 @@ The script takes an H\&E image and a CSV file containing nuclei centroids, then 
 
 * **Shape Features (9)**: Area, perimeter, circularity, aspect ratio, solidity, eccentricity, extent, Feret diameter, roundness
 * **Texture Features (6)**: Haralick (contrast, homogeneity, energy, correlation) and LBP (uniformity, entropy)
-* **Color Features (22)**: RGB channel statistics (mean, std, median, skewness, kurtosis) and color ratios/differences
+* **Color Features (21)**: RGB channel statistics (mean, std, median, skewness, kurtosis) and color ratios/differences
 * **Intensity Features (8)**: Grayscale intensity statistics (mean, std, median, min, max, range, skewness, kurtosis)
 
 ##  Requirements

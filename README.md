@@ -32,7 +32,7 @@ python nuclei_detect_and_features.py --image Easy1.png --outdir outputs
 
 # Handcrafted Features Extraction for Nuclei
 
-This script extracts **44 handcrafted features** from nuclei in H\&E histology images based on pre-computed centroids.
+This script extracts **45 handcrafted features** from nuclei in H\&E histology images based on pre-computed centroids.
 
 ## What This Does
 
